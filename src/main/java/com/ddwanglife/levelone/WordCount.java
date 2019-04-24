@@ -66,5 +66,6 @@ public class WordCount {
         });
         wordCounts.saveAsTextFile(outputSparkFile);
 //        wordCounts.saveAsTextFile("D://resultCount");
+        sc.close();
     }
 }
