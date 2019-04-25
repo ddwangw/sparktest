@@ -1,18 +1,17 @@
 package com.ddwanglife.util;
 
+import com.ddwanglife.conf.ConfigurationManager;
+import com.ddwanglife.constant.Constants;
 import org.apache.spark.SparkConf;
 import org.apache.spark.SparkContext;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.sql.DataFrame;
+import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SQLContext;
 import org.apache.spark.sql.hive.HiveContext;
 
 import com.alibaba.fastjson.JSONObject;
-import com.ibeifeng.sparkproject.conf.ConfigurationManager;
-import com.ibeifeng.sparkproject.constant.Constants;
-import com.ibeifeng.sparkproject.test.MockData;
 
 /**
  * Spark工具类
@@ -56,7 +55,7 @@ public class SparkUtils {
 	public static void mockData(JavaSparkContext sc, SQLContext sqlContext) {
 		boolean local = ConfigurationManager.getBoolean(Constants.SPARK_LOCAL);
 		if(local) {
-			MockData.mock(sc, sqlContext);  
+//			MockData.mock(sc, sqlContext);
 		}
 	}
 	
@@ -77,9 +76,9 @@ public class SparkUtils {
 				+ "where date>='" + startDate + "' "
 				+ "and date<='" + endDate + "'";  
 //				+ "and session_id not in('','','')"
-		
-		DataFrame actionDF = sqlContext.sql(sql);
-		
+
+		Dataset actionDF = sqlContext.sql(sql);
+
 		/**
 		 * 这里就很有可能发生上面说的问题
 		 * 比如说，Spark SQl默认就给第一个stage设置了20个task，但是根据你的数据量以及算法的复杂度

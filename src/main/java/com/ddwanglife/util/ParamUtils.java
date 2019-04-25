@@ -2,8 +2,8 @@ package com.ddwanglife.util;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.ibeifeng.sparkproject.conf.ConfigurationManager;
-import com.ibeifeng.sparkproject.constant.Constants;
+import com.ddwanglife.conf.ConfigurationManager;
+import com.ddwanglife.constant.Constants;
 
 /**
  * 参数工具类
