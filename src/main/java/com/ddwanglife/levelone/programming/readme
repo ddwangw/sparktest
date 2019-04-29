@@ -1,0 +1,34 @@
+https://www.jianshu.com/p/4b09f2024cd0
+https://www.linstitute.net/archives/27325
+分类
+    transformation
+        变换转换算子：不触发提交作业，只是完成作业中间处理过程；
+            操作是延迟计算的，参数类型为value或者key-value形式
+        map
+        flatmap
+        mapPartitions
+        glom
+        union
+        cartesain
+        groupBy
+        filter
+        distinct
+        substract
+        sample
+        takeSample
+        cache
+        persist
+    action
+        行动算子：出发sparkcontext提交job作业。
+        foreach
+        saveAsTextFile
+        saveAsObjectFile
+        collect
+        collectAsMap
+        reduceByKeyLocally
+        lookup
+        count
+        top
+        reduce
+        fold
+        aggregate
